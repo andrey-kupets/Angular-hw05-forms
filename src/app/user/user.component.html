@@ -1,0 +1,35 @@
+FIRST VAR - ngFORM
+<form #form="ngForm" (ngSubmit)="submit(form)">
+  UserId: {{user.id}} <br>
+  <label for="">Name</label>
+  <input [class.error]="!form.controls.name?.valid" type="text" [(ngModel)]="user.name" name="name" minlength="10"><br>
+  <p *ngIf="!form.controls.name?.valid">hey, man, name must have 10 symbols at least</p>
+  <label for="">Email</label>
+  <input type="email" [(ngModel)]="user.email" name="email"><br>
+  <button [disabled]="!form.controls.name?.valid">confirm</button>
+</form>
+
+
+<!--SECOND VAR --- ReactiveFormsModule-->
+<!--<form [formGroup]="myForm" (ngSubmit)="xxx(myForm)">-->
+<!--  UserId: {{user.id}} <br>-->
+<!--  <label for="">Name</label>-->
+<!--  <input [formControl]="name"><br>-->
+<!--  <label for="">Email</label>-->
+<!--  <input [formControl]="email"><br>-->
+<!--  <button [disabled]="!myForm.valid">save</button>-->
+<!--</form>-->
+
+
+
+
+
+
+
+
+
+
+<!--  [(ngModel)] is almost the same as [defaultValue]-->
+
+<!--<input #qqq type="text" [(ngModel)]="user.name" (input)="onInputAction(r)"><br>-->
+<!--<button [disabled]="!form.controls.name?.valid">confirm</button>-->
