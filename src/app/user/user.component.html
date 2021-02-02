@@ -1,24 +1,26 @@
 <!--FIRST VAR - ngFORM-->
-<form #form="ngForm" (ngSubmit)="submit(form)">
-  UserId: {{user.id}} <br>
-  <label for="">Name</label>
-  <input [class.error]="!form.controls.name?.valid" type="text" [(ngModel)]="user.name" name="name" minlength="10"><br>
-  <p *ngIf="!form.controls.name?.valid">hey, man, name must have 10 symbols at least</p>
-  <label for="">Email</label>
-  <input type="email" [(ngModel)]="user.email" name="email"><br>
-  <button [disabled]="!form.controls.name?.valid">confirm</button>
-</form>
-
-
-<!--SECOND VAR --- ReactiveFormsModule-->
-<!--<form [formGroup]="myForm" (ngSubmit)="xxx(myForm)">-->
+<!--<form #form="ngForm" (ngSubmit)="submit(form)">-->
 <!--  UserId: {{user.id}} <br>-->
 <!--  <label for="">Name</label>-->
-<!--  <input [formControl]="name"><br>-->
+<!--  <input [class.error]="!form.controls.name?.valid" type="text" [(ngModel)]="user.name" name="name" minlength="10"><br>-->
+<!--  <p *ngIf="!form.controls.name?.valid">hey, man, name must have 10 symbols at least</p>-->
 <!--  <label for="">Email</label>-->
-<!--  <input [formControl]="email"><br>-->
-<!--  <button [disabled]="!myForm.valid">save</button>-->
+<!--  <input type="email" [(ngModel)]="user.email" name="email"><br>-->
+<!--  <button [disabled]="!form.controls.name?.valid">confirm</button>-->
 <!--</form>-->
+
+
+<!--SECOND VAR ReactiveFormsModule-->
+<form [formGroup]="newForm" (ngSubmit)="xxx(newForm)">
+  UserId: {{user.id}} <br>
+  <label >Name
+    <input formControlName="name"><br>
+  </label>
+  <label >Email
+    <input formControlName="email"><br>
+  </label>
+  <button [disabled]="!newForm.valid">save</button>
+</form>
 
 
 
