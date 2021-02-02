@@ -16,6 +16,7 @@
   <label >Name
     <input formControlName="name"><br>
   </label>
+<div *ngIf="newForm.controls.name.errors">{{newForm.controls.name.errors.msg}}</div>
   <label >Email
     <input formControlName="email"><br>
   </label>
@@ -35,3 +36,17 @@
 
 <!--<input #qqq type="text" [(ngModel)]="user.name" (input)="onInputAction(r)"><br>-->
 <!--<button [disabled]="!form.controls.name?.valid">confirm</button>-->
+
+
+
+<!--<form [formGroup]="newForm" (ngSubmit)="xxx(newForm)">-->
+<!--  UserId: {{user.id}} <br>-->
+<!--  <label >Name-->
+<!--    <input [formControl]="name"><br>-->
+<!--  </label>-->
+<!--  <div *ngIf="newForm.controls.name.errors">{{newForm.controls.name.errors.msg}}</div>-->
+<!--  <label >Email-->
+<!--    <input [formControl]="email"><br>-->
+<!--  </label>-->
+<!--  <button [disabled]="!newForm.valid">save</button>-->
+<!--</form>-->

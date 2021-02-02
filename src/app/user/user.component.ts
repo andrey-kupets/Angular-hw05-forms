@@ -13,9 +13,10 @@ export class UserComponent implements OnInit {
   @Input()
   user: User;
 
-  // name = new FormControl('', [Validators.required, Validators.minLength(10), this.customFukcValidator]);
+  // second var - 1st method
+  // name = new FormControl('', [Validators.required, Validators.minLength(4), this.customFukcValidator]);
   // email = new FormControl('');
-  // myForm = new FormGroup({
+  // newForm = new FormGroup({
   //   name: this.name,
   //   email: this.email
   // });
